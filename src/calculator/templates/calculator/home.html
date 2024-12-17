@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+</head>
+
+<body>
+    <h1>Basic Calculator</h1>
+
+    <!-- http://127.0.0.1:8000/result/?number1=5&number2=3&operation=add -->
+    <form action="{% url 'result' %}" method="get"> 
+        {{ form.number1 }} <br><br>
+        {{ form.number2 }} <br><br>
+        <button type="submit" name="operation" value="add">Add</button>
+        <button type="submit" name="operation" value="subtract">Subtract</button>
+        <button type="submit" name="operation" value="multiply">Multiply</button>
+        <button type="submit" name="operation" value="divide">Divide</button>
+    </form>
+
+</body>
+</html>

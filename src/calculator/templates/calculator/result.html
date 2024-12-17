@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation Result</title>
+</head>
+
+<body>
+    <h3>The result is:</h3>
+    {% if result is not None %}
+    <p>{{ result }}</p>
+    {% endif %}
+
+     <!-- Display Form-Level Errors -->
+    {% if form.non_field_errors %}
+    <div class="errorlist" style="color: red;">
+        <p>{{ form.non_field_errors|striptags }}</p>
+    </div>
+    {% endif %}
+
+    <form action="{% url 'home' %}" method="get">
+        <button type="submit">Go Back</button>
+    </form>
+</body>
+</html>
